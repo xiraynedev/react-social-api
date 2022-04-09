@@ -1,0 +1,23 @@
+{
+  "name": "react-social-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "fastify": "^3.28.0",
+    "fastify-cors": "^6.0.3",
+    "fastify-helmet": "^7.0.1",
+    "mongoose": "^6.2.10",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
