@@ -20,17 +20,20 @@ async function routes(fastify, options) {
     return result;
   });
 
-  fastify.get('/api/register', async (fastify, options) => {
-    const user = await new User({
-      username: 'Jane',
-      email: 'jane@email.com',
-      password: '12345678',
+  fastify.post('/api/register', async (request, reply) => {
+    const newUser = new User({
+      username: request.body.username,
+      email: request.body.email,
+      password: request.body.password,
     });
 
-    await user.save();
-    return {
-      status: 'saved user',
-    };
+    try {
+      const user = await newUser.save();
+      reply.send('Successfully saved user');
+    } catch (err) {
+      console.log(err);
+      return;
+    }
   });
 }
 
